@@ -1,0 +1,16 @@
+[app/ui]
+version = 7.0.1
+modtime = 1516248491.535915000
+
+[app/launcher]
+version = 7.0.1
+modtime = 1516248491.543257000
+
+[app/package/check_for_updates]
+version = 7.0.1
+modtime = 1516248491.545534000
+
+[views/custom_view]
+owner = admin
+version = 7.0.1
+modtime = 1516249803.432111000
