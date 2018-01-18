@@ -15,3 +15,5 @@
 /SplunkForwarder/*
 /SplunkLightForwarder/*
 /user-prefs/*
+/alert_logevent/*
+/splunk_archiver/*
