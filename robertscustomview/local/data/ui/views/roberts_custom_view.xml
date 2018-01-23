@@ -1,0 +1,15 @@
+<dashboard script="customview.js">
+
+  <label>Custom View</label>
+
+  <row>
+    <html>
+      <h4>How many artists do you want to show? (1-21)</h4>
+      <div id="txtNum"></div>
+
+      <h2>Downloads per Artist</h2>
+      <canvas id="mychart" width="700" height="700"></canvas>
+    </html>
+  </row>
+
+</dashboard>
