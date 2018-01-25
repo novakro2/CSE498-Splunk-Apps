@@ -1,0 +1,44 @@
+<dashboard>
+  <label>Operational Trends</label>
+  <row>
+    <panel>
+      <title>Authentications Across Different Device Types</title>
+      <chart>
+        <search>
+          <query>| inputlookup mock_data.csv | top Device_Type | fields - percent | rex field=Device_Type mode=sed "s/\+/ /g"</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Success vs. Failure Authentications</title>
+      <chart>
+        <search>
+          <query>| inputlookup mock_data.csv | top Authentication_Success | fields - percent | rex field=Authentication_Success mode=sed "s/\+/ /g"</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Number of Authentications Over Last Seven Days</title>
+      <chart>
+        <search>
+          <query>| inputlookup mock_data.csv |rex field=Timestamp "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>
