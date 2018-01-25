@@ -15,7 +15,7 @@ class Generator:
     last_day = datetime.datetime.now()
 
     # The headers for our data
-    HEADERS = ["Timestamp", "Authentication Success", "Device ID", "Device Type", "User ID"]
+    HEADERS = ["Timestamp", "Authentication_Success", "Device_ID", "Device_Type", "User_ID"]
 
     # The rows of data that comprises our data set
     DATA = []
@@ -120,7 +120,7 @@ class Generator:
             time = time + datetime.timedelta(seconds=seconds)
             row.append(time)
 
-            row.append(["SUCCESS", "FAIL"][random.randint(0,1)])
+            row.append(["SUCCESS", "SUCCESS", "SUCCESS", "SUCCESS", "SUCCESS", "SUCCESS", "FAIL"][random.randint(0,6)])
 
             user = self.users[random.randint(0,self.number_of_users-1)]
             device = user.devices[random.randint(0, len(user.devices)-1)]
