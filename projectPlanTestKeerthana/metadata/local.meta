@@ -9,7 +9,7 @@ modtime = 1516920469.383478000
 [views/operational_trends]
 owner = admin
 version = 7.0.1
-modtime = 1516919824.593270000
+modtime = 1516943600.887477000
 
 [app/package/check_for_updates]
 version = 7.0.1
