@@ -1,0 +1,279 @@
+{
+    "meta": {
+        "restRoot": "TA_workday", 
+        "displayName": "Workday Add-on for Splunk", 
+        "version": "0.2.2", 
+        "apiVersion": "3.0.0", 
+        "name": "TA-workday"
+    }, 
+    "pages": {
+        "inputs": {
+            "title": "Inputs", 
+            "services": [
+                {
+                    "title": "Workday", 
+                    "entity": [
+                        {
+                            "required": true, 
+                            "validators": [
+                                {
+                                    "type": "regex", 
+                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
+                                    "pattern": "^[a-zA-Z]\\w*$"
+                                }, 
+                                {
+                                    "maxLength": 100, 
+                                    "type": "string", 
+                                    "errorMsg": "Length of input name should be between 1 and 100", 
+                                    "minLength": 1
+                                }
+                            ], 
+                            "help": "Enter a unique name for the data input", 
+                            "type": "text", 
+                            "field": "name", 
+                            "label": "Name"
+                        }, 
+                        {
+                            "required": true, 
+                            "validators": [
+                                {
+                                    "type": "regex", 
+                                    "errorMsg": "Interval must be an integer.", 
+                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$"
+                                }
+                            ], 
+                            "help": "Time interval of input in seconds.", 
+                            "type": "text", 
+                            "field": "interval", 
+                            "label": "Interval"
+                        }, 
+                        {
+                            "required": true, 
+                            "defaultValue": "default", 
+                            "options": {
+                                "endpointUrl": "data/indexes", 
+                                "blackList": "^_.*$", 
+                                "createSearchChoice": true
+                            }, 
+                            "type": "singleSelect", 
+                            "validators": [
+                                {
+                                    "maxLength": 80, 
+                                    "type": "string", 
+                                    "errorMsg": "Length of index name should be between 1 and 80.", 
+                                    "minLength": 1
+                                }
+                            ], 
+                            "field": "index", 
+                            "label": "Index"
+                        }, 
+                        {
+                            "required": true, 
+                            "defaultValue": "user_activity", 
+                            "help": "", 
+                            "type": "singleSelect", 
+                            "field": "input_name", 
+                            "label": "Input Name", 
+                            "options": {
+                                "disableSearch": true, 
+                                "autoCompleteFields": [
+                                    {
+                                        "label": "User Activity", 
+                                        "value": "user_activity"
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            "required": false, 
+                            "help": "WARNING: This data can be extremely sensitive, restricting access to the index is strongly recommended before enabling. See \"Help\" for more information.", 
+                            "type": "checkbox", 
+                            "label": "Include target details", 
+                            "field": "include_target"
+                        }
+                    ], 
+                    "name": "workday"
+                }
+            ], 
+            "table": {
+                "moreInfo": [
+                    {
+                        "label": "Name", 
+                        "field": "name"
+                    }, 
+                    {
+                        "label": "Interval", 
+                        "field": "interval"
+                    }, 
+                    {
+                        "label": "Index", 
+                        "field": "index"
+                    }, 
+                    {
+                        "label": "Status", 
+                        "field": "disabled"
+                    }, 
+                    {
+                        "label": "Input Name", 
+                        "field": "input_name"
+                    }, 
+                    {
+                        "label": "Include target details", 
+                        "field": "include_target"
+                    }
+                ], 
+                "actions": [
+                    "edit", 
+                    "enable", 
+                    "delete", 
+                    "clone"
+                ], 
+                "header": [
+                    {
+                        "label": "Name", 
+                        "field": "name"
+                    }, 
+                    {
+                        "label": "Interval", 
+                        "field": "interval"
+                    }, 
+                    {
+                        "label": "Index", 
+                        "field": "index"
+                    }, 
+                    {
+                        "label": "Status", 
+                        "field": "disabled"
+                    }
+                ]
+            }, 
+            "description": "Manage your data inputs"
+        }, 
+        "configuration": {
+            "title": "Configuration", 
+            "description": "Set up your add-on", 
+            "tabs": [
+                {
+                    "title": "Logging", 
+                    "entity": [
+                        {
+                            "defaultValue": "INFO", 
+                            "options": {
+                                "disableSearch": true, 
+                                "autoCompleteFields": [
+                                    {
+                                        "label": "DEBUG", 
+                                        "value": "DEBUG"
+                                    }, 
+                                    {
+                                        "label": "INFO", 
+                                        "value": "INFO"
+                                    }, 
+                                    {
+                                        "label": "WARNING", 
+                                        "value": "WARNING"
+                                    }, 
+                                    {
+                                        "label": "ERROR", 
+                                        "value": "ERROR"
+                                    }, 
+                                    {
+                                        "label": "CRITICAL", 
+                                        "value": "CRITICAL"
+                                    }
+                                ]
+                            }, 
+                            "type": "singleSelect", 
+                            "label": "Log level", 
+                            "field": "loglevel"
+                        }
+                    ], 
+                    "name": "logging"
+                }, 
+                {
+                    "title": "Add-on Settings", 
+                    "entity": [
+                        {
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "type": "string", 
+                                    "errorMsg": "Max length of text input is 8192", 
+                                    "minLength": 0
+                                }
+                            ], 
+                            "defaultValue": "", 
+                            "help": "Available from the \"View API Clients\" task in Workday", 
+                            "type": "text", 
+                            "field": "rest_api_endpoint", 
+                            "label": "Workday REST API Endpoint"
+                        }, 
+                        {
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "type": "string", 
+                                    "errorMsg": "Max length of text input is 8192", 
+                                    "minLength": 0
+                                }
+                            ], 
+                            "defaultValue": "", 
+                            "help": "Available from the \"View API Clients\" task in Workday", 
+                            "type": "text", 
+                            "field": "token_endpoint", 
+                            "label": "Token Endpoint"
+                        }, 
+                        {
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "type": "string", 
+                                    "errorMsg": "Max length of text input is 8192", 
+                                    "minLength": 0
+                                }
+                            ], 
+                            "defaultValue": "", 
+                            "help": "OAuth2 client id, see the Help tab for instructions to setup your API client in Workday", 
+                            "type": "text", 
+                            "field": "client_id", 
+                            "label": "Client ID"
+                        }, 
+                        {
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "type": "string", 
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "minLength": 0
+                                }
+                            ], 
+                            "defaultValue": "", 
+                            "help": "OAuth2 client secret", 
+                            "type": "text", 
+                            "field": "client_secret", 
+                            "encrypted": true, 
+                            "label": "Client Secret"
+                        }, 
+                        {
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "type": "string", 
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "minLength": 0
+                                }
+                            ], 
+                            "defaultValue": "", 
+                            "help": "OAuth2 refresh token", 
+                            "type": "text", 
+                            "field": "refresh_token", 
+                            "encrypted": true, 
+                            "label": "Refresh Token"
+                        }
+                    ], 
+                    "name": "additional_parameters"
+                }
+            ]
+        }
+    }
+}

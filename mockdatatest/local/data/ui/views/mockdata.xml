@@ -1,3 +1,18 @@
 <dashboard>
   <label>mockdata</label>
+  <row>
+    <panel>
+      <chart>
+        <title>test</title>
+        <search>
+          <query>source="C:\\Program Files\\Splunk\\etc\\apps\\mockdatatest\\lookups\\event.log" sourcetype="_json" | search operation=authenticateUser | top result.statusMessage</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
 </dashboard>

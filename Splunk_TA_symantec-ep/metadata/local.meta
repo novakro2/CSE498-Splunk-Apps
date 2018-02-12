@@ -1,0 +1,15 @@
+[app/install/install_source_checksum]
+version = 7.0.1
+modtime = 1518128160.604465000
+
+[symantec_ep/symantec_ep_proxy]
+version = 7.0.1
+modtime = 1518129203.177519400
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2FSplunk_TA_symantec-ep%2Fbin%2Fmalware_category_update.py]
+version = 7.0.1
+modtime = 1518129209.589192900
+
+[app/install/is_configured]
+version = 7.0.1
+modtime = 1518129223.758011900

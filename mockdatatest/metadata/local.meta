@@ -9,4 +9,9 @@ modtime = 1516916876.755810600
 [views/mockdata]
 owner = admin
 version = 7.0.1
-modtime = 1516916965.064082400
+modtime = 1518462312.141678100
+
+[inputs/monitor%3A%2F%2FC%3A%5CProgram%20Files%5CSplunk%5Cetc%5Capps%5Cmockdatatest%5Clookups%5Cevent.log]
+owner = admin
+version = 7.0.1
+modtime = 1518461564.109282200
