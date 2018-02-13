@@ -1,0 +1,90 @@
+<dashboard stylesheet="css/workday-custom.css">
+  <label>Help</label>
+  <row>
+    <panel>
+      <title>Support</title>
+      <html>
+        If the Workday Add-on for Splunk is not working as expected, please have a Workday Administrator in your organization create a case to receive assistance from Workday Support.
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Setup API Client</title>
+      <html>
+        <section class="doc">
+          <ol class="doc_steps">
+            <li>See the setup guide in <a href="https://community.workday.com/AddOnForSplunk">Workday Community</a> to create an API client in Workday</li>
+            <li>Copy the following values for your client into the <a href="/app/TA-workday/configuration#add-on-settings">Configuration</a> tab and Save
+              <ul>
+                <li>Workday REST API Endpoint</li>
+                <li>Token Endpoint</li>
+                <li>Client ID</li>
+                <li>Client Secret</li>
+                <li>Refresh Token</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Setup Data Sources</title>
+      <html>
+        <section class="doc">
+          <ol class="doc_steps">
+            <li>Create a new input from the <a href="/app/TA-workday/inputs">Inputs</a> tab to start collecting logs
+              <ul>
+                <li>Interval: Time between poll attempts on the Workday API (in seconds)</li>
+                <li>Index: Splunk storage index (consider using a custom "workday" index to have better control over security permissions)</li>
+                <li>Input Name: Data type to collect</li>
+                <li>Include target details: Check to include the "target" field of user actions in the audit log</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>FAQ</title>
+      <html>
+        <section class="doc">
+          <ul id="faq" class="doc_steps">
+            <li>Where can I view script execution logs?<br/>
+              Splunk Search: <pre>index=_internal source=*/ta_workday_workday.log</pre> Filesystem: <pre>$SPLUNK_HOME/var/log/splunk/ta_workday_workday.log</pre>
+            </li>
+
+            <li>How do I enable DEBUG logging?<br/>
+              Log level can be changed in the <a href="/app/TA-workday/configuration#logging">Configuration</a> tab. Default log level is INFO.
+            </li>
+
+            <li>Why is the User Activity input not returning any data?<br/>
+              Make sure that "Enable User Activity Logging" is checked in the "Edit Tenant Setup - System" task. Any user activity from before this setting is enabled will not be retrievable.
+            </li>
+
+            <li>What is the "Include target details" setting?<br/>
+              In Workday audit logging the target is the object that was operated on by a task, for example a manager viewing the compensation details for a specific employee. This field may contain more sensitive information than the standard log and is therefore disabled by default. Workday strongly recommends limiting access to the storage index before enabling this setting.
+            </li>
+          </ul>
+        </section>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Additional Resources</title>
+      <html>
+        <section class="doc">
+          <ul class="doc_steps">
+            <li><a href="https://community.workday.com/">Workday Community</a></li>
+            <li><a href="https://docs.splunk.com/Documentation">Splunk Documentation</a></li>
+          </ul>
+        </section>
+      </html>
+    </panel>
+  </row>
+</dashboard>

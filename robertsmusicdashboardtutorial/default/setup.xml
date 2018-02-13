@@ -1,0 +1,16 @@
+<setup>
+  <block title="Configure This App" endpoint="customendpoint_setup/customendpoint_script" entity="customendpoint_script">
+		<text>
+			Setup screen with custom endpoints
+		</text>
+  
+  
+
+  <input field="field_1">
+    <label>Enter your text</label>
+    <type>text</type>
+  </input>
+
+  </block>
+		
+</setup>

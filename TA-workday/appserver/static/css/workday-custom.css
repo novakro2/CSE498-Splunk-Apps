@@ -1,0 +1,18 @@
+.doc {
+	padding:  0 0 0 1em;
+}
+
+.doc_steps {
+	margin: 0;
+	padding: 1em 0;
+}
+
+.doc_steps > li {
+	line-height: 1.3em;
+	padding: 0 0 1em 0;
+	list-style-position: inside;
+}
+
+.doc_steps li p {
+	margin: 1em 2em;
+}
