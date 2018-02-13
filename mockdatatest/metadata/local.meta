@@ -15,3 +15,8 @@ modtime = 1518462312.141678100
 owner = admin
 version = 7.0.1
 modtime = 1518461564.109282200
+
+[indexes/event_test]
+owner = admin
+version = 7.0.1
+modtime = 1518498211.396120900
