@@ -1,0 +1,54 @@
+<dashboard>
+  <label>Operational Trends</label>
+  <row>
+    <panel>
+      <title>Total Number of Authentications</title>
+      <single>
+        <search>
+          <query>| inputlookup result.csv |where operation = "authenticateUser"|stats count by operation | stats sum(count)</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Total Number of Users</title>
+      <single>
+        <search>
+          <query>| inputlookup result.csv |where operation = "createUser"|stats count by operation | stats sum(count)</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Authentication Status</title>
+      <chart>
+        <search>
+          <query>| inputlookup result.csv |where operation = "authenticateUser"| top result.status | fields - percent | rex field=result.status mode=sed "s/\+/ /g"</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Number of Authentications Over Last Few Days</title>
+      <chart>
+        <search>
+          <query>| inputlookup result.csv |where operation = "authenticateUser" | rex field=ts "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

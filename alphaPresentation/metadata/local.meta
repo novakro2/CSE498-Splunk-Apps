@@ -1,0 +1,12 @@
+[app/ui]
+version = 7.0.1
+modtime = 1518396975.565308000
+
+[app/launcher]
+version = 7.0.1
+modtime = 1518396975.573828000
+
+[views/operational_trends]
+owner = admin
+version = 7.0.1
+modtime = 1518404167.783459000
