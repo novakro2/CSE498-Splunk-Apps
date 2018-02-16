@@ -13,5 +13,5 @@ res = client.service.setTemporaryPassword(requestId="1234", userId="PYTHONTEST")
 pw = res.temporaryPassword
 
 client2 = Client("C:/Users/Robert/Documents/CSE498/wsdl/vipuserservices-auth-1.8.wsdl", transport=transport)
-res = client2.service.authenticateUser(requestId="12345", userId="PYTHONTEST", otpAuthData="654789")
+res = client2.service.authenticateUser(requestId="12345", userId="PYTHONTEST", otpAuthData="654786")
 print(res)

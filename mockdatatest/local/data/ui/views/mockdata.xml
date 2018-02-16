@@ -15,4 +15,20 @@
       </chart>
     </panel>
   </row>
+  <row>
+    <panel>
+      <chart>
+        <search>
+          <query>index="event_test" | where operation="authenticateUser" | timechart  span=30m count(_raw)</query>
+          <earliest>-48h@h</earliest>
+          <latest>now</latest>
+          <refresh>5s</refresh>
+          <refreshType>delay</refreshType>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
 </dashboard>
