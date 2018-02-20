@@ -1,0 +1,41 @@
+[app/ui]
+version = 7.0.2
+modtime = 1518998438.708448000
+
+[app/launcher]
+version = 7.0.2
+modtime = 1518998438.740534600
+
+[indexes/alert_test]
+owner = admin
+version = 7.0.2
+modtime = 1518999936.780794400
+
+[props/events]
+owner = admin
+version = 7.0.2
+modtime = 1519000025.256296500
+
+[inputs/monitor%3A%2F%2FC%3A%5CProgram%20Files%5CSplunk%5Cetc%5Capps%5Calert_test%5Clookups%5Cevent.log]
+owner = admin
+version = 7.0.2
+modtime = 1519000067.509090500
+
+[savedsearches/test_alert2]
+owner = admin
+version = 7.0.2
+modtime = 1519012648.624810600
+
+[views/alert_test]
+owner = admin
+version = 7.0.2
+modtime = 1519002732.449381600
+
+[views/operational_trends]
+version = 7.0.2
+modtime = 1519083107.068558900
+
+[indexes/capstone_alerts]
+owner = admin
+version = 7.0.2
+modtime = 1519011544.424691200

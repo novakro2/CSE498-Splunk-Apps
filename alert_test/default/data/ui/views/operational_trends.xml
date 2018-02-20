@@ -1,0 +1,99 @@
+<dashboard>
+  <label>Operational Trends</label>
+  <row>
+    <panel>
+      <title>Total Number of Authentications</title>
+      <single>
+        <search>
+          <query>index = "alert_test" | where operation = "authenticateUser"|stats count by operation | stats sum(count)</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <refresh>3s</refresh>
+          <refreshType>delay</refreshType>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Total Number of Users</title>
+      <single>
+        <search>
+          <query>index="alert_test"|where operation = "createUser"|stats count by operation | stats sum(count)</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <refresh>30s</refresh>
+          <refreshType>delay</refreshType>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Authentication Status</title>
+      <chart>
+        <search>
+          <query>index="alert_test" |where operation = "authenticateUser"| top result.status | fields - percent | rex field=result.status mode=sed "s/\+/ /g"</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Number of Authentications Over Last Few Days</title>
+      <chart>
+        <search>
+          <query>index="alert_test"|where operation = "authenticateUser" | rex field=ts "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Users Created Over Time</title>
+      <chart>
+        <search>
+          <query>index="alert_test" |where operation = "createUser" | rex field=ts "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <event>
+        <search>
+          <query>index = "alert_test" | where operation = "authenticateUser" | where 'result.statusMessage' = "Success"</query>
+          <earliest>rt-5m</earliest>
+          <latest>rt-0m</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">20</option>
+        <option name="list.drilldown">none</option>
+        <option name="list.wrap">1</option>
+        <option name="maxLines">5</option>
+        <option name="raw.drilldown">full</option>
+        <option name="rowNumbers">0</option>
+        <option name="table.drilldown">all</option>
+        <option name="table.sortDirection">asc</option>
+        <option name="table.wrap">1</option>
+        <option name="type">list</option>
+      </event>
+    </panel>
+  </row>
+</dashboard>
