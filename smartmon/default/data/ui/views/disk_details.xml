@@ -1,0 +1,243 @@
+<form script="tabs.js,disk_details.js" stylesheet="tabs.css,disk_details.css">
+  <label>Disk Details</label>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="dropdown" token="serial_number" searchWhenChanged="true">
+      <label>Disk</label>
+      <search>
+        <query>sourcetype=smartmon | stats latest(Device_Model) as Device_Model by Serial_Number | eval name=Device_Model." (".Serial_Number.")"</query>
+        <earliest>@y</earliest>
+        <latest>now</latest>
+      </search>
+      <fieldForLabel>name</fieldForLabel>
+      <fieldForValue>Serial_Number</fieldForValue>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <single>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | fillnull Reallocated_Sector_Ct | timechart max(Reallocated_Sector_Ct)</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xf58f39","0xd93f3c"]</option>
+        <option name="rangeValues">[0,4]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="trendInterval">auto</option>
+        <option name="underLabel">Reallocated Sector Count</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | fillnull Offline_Uncorrectable | timechart max(Offline_Uncorrectable)</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xd93f3c"]</option>
+        <option name="rangeValues">[1]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="trendInterval">auto</option>
+        <option name="underLabel">Offline Uncorrectable Errors</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | fillnull Command_Timeout | timechart max(Command_Timeout)</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xf58f39","0xd93f3c"]</option>
+        <option name="rangeValues">[0,13]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="trendInterval">auto</option>
+        <option name="underLabel">Command Timeouts</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | fillnull Current_Pending_Sector| timechart max(Current_Pending_Sector)</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xd93f3c"]</option>
+        <option name="rangeValues">[1]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="trendInterval">auto</option>
+        <option name="underLabel">Current Pending Sectors</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | fillnull Reported_Uncorrect| timechart max(Reported_Uncorrect)</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="colorBy">value</option>
+        <option name="colorMode">block</option>
+        <option name="numberPrecision">0</option>
+        <option name="rangeColors">["0x65a637","0xd93f3c"]</option>
+        <option name="rangeValues">[1]</option>
+        <option name="showSparkline">1</option>
+        <option name="showTrendIndicator">1</option>
+        <option name="trendColorInterpretation">standard</option>
+        <option name="trendDisplayMode">absolute</option>
+        <option name="trendInterval">auto</option>
+        <option name="underLabel">Reported Uncorrectable Errors</option>
+        <option name="useColors">1</option>
+        <option name="useThousandSeparators">1</option>
+        <option name="linkView">search</option>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+  <row id="tabs_row">
+    <panel>
+      <html>
+        <ul id="tabs" class="nav nav-tabs">
+          <li class="active">
+            <a href="#" class="toggle-tab" data-toggle="tab" data-elements="tab_specs">Disk Specifications</a>
+          </li>
+          <li>
+			<a href="#" class="toggle-tab" data-toggle="tab" data-elements="tab_attrs">SMART Attributes</a>
+          </li>
+          <li>
+			<a href="#" class="toggle-tab" data-toggle="tab" data-elements="tab_temperature">Disk Temperature</a>
+          </li>
+          <li>
+			<a href="#" class="toggle-tab" data-toggle="tab" data-elements="tab_tests">Self-test Log</a>
+          </li>
+		 </ul>
+      </html>
+    </panel>
+  </row>
+  <row id="tab_specs">
+    <panel>
+      <table>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | head 1 | `timesince(_time,Last_Observed)` | table host Last_Observed Warning Device_Model Serial_Number Firmware_Version User_Capacity Sector_Size Rotation_Rate Wear_Leveling_Count Temperature* | eval row="Value" | eval Temperature_Fahrenheit=Temperature_Celsius*1.8+32 | transpose column_name="Data" header_field=row include_empty=false</query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">20</option>
+      </table>
+    </panel>
+  </row>
+  <row id="tab_attrs">
+    <panel>
+      <table>
+        <search>
+          <query><![CDATA[
+          sourcetype=smartmon Serial_Number=$serial_number$ | head 1 | rex "RAW_VALUE\n(?<attributes>([ ]*[0-9]+.*\n)+)" | rex field=attributes max_match=100 "(?<attribute>[^\n]+)" | mvexpand attribute | rex max_match=100 field=attribute "[ ]*(?<id>([0-9]+))[ ]+(?<name>([-0-9a-zA-Z_]+))[ ]+(?<flag>([-0-9a-zA-Z_]+))[ ]+(?<value>([-0-9]+))[ ]+(?<worst>([-0-9]+))[ ]+(?<threshold>([-0-9]+))[ ]+(?<type>([-_a-zA-Z0-9]+))[ ]+(?<updated>([-_a-zA-Z0-9]+))[ ]+(?<when_failed>([-_a-zA-Z0-9]+))[ ]+(?<raw_value>([^\n]+))" | table name id flag value worst threshold type updated when_failed raw_value</query>
+           ]]>
+          </query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">20</option>
+      </table>
+    </panel>
+  </row>
+  <row id="tab_temperature">
+    <panel>
+      <chart>
+        <search>
+          <query>sourcetype=smartmon Serial_Number=$serial_number$ | eval Temperature_Fahrenheit=Temperature_Celsius*1.8+32 | timechart avg(Temperature_Celsius) as Temperature_Celsius avg(Temperature_Fahrenheit) as Temperature_Fahrenheit</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">all</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.fieldColors">{"Temperature_Fahrenheit":0xF2B827,"Temperature_Celsius":0xEB8440}</option>
+      </chart>
+    </panel>
+  </row>
+  <row id="tab_tests">
+    <panel>
+      <table>
+        <search>
+          <query><![CDATA[sourcetype=smartmon Serial_Number=$serial_number$ | head 1 | rex "LBA_of_first_error\n(?<logs>(#[ ]*[0-9]+[^\n]*\n)+)" | rex field=logs max_match=100 "(?<log>[^\n]+)\n" | mvexpand log | rex max_match=100 field=log "#[ ]*(?<test_number>([0-9]+))[ ]+(?<test_description>([-_a-zA-Z 0-9()]+))[ ]+(?<remaining>([0-9]+[%]))[ ]+(?<lifetime_hours>([0-9]+))[ ]+(?<lba_of_first_error>(.*))" | table test_number test_description remaining lifetime_hours lba_of_first_error]]></query>
+          <earliest>-30d@d</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">20</option>
+      </table>
+    </panel>
+  </row>
+</form>

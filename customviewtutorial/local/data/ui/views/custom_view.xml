@@ -1,0 +1,11 @@
+<dashboard script="customview.js">
+
+  <label>Custom View</label>
+
+  <row>
+    <html>
+      <div id="mycustomview"></div>
+    </html>
+  </row>
+
+</dashboard>

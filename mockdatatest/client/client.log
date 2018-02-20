@@ -1,0 +1,110 @@
+[2018-02-16 01:57:31.048][INFO] Starting ReferenceClientApplication on LAPTOP-5304HFEG with PID 4860 (C:\Program Files\Splunk\etc\apps\mockdatatest\referenceclient.jar started by Robert in C:\Program Files\Splunk\etc\apps\mockdatatest)
+[2018-02-16 01:57:31.113][INFO] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2d463cbe: startup date [Fri Feb 16 01:57:31 EST 2018]; root of context hierarchy
+[2018-02-16 01:57:33.157][INFO] Bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' of type [class org.springframework.scheduling.annotation.SchedulingConfiguration$$EnhancerBySpringCGLIB$$82e77eb6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-02-16 01:57:36.954][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 01:57:36.958][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 01:57:36.962][INFO] Starting beans in phase 0
+[2018-02-16 01:57:36.965][INFO] Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2018-02-16 01:57:37.005][INFO] Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2018-02-16 01:57:37.013][INFO] Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2018-02-16 01:57:37.017][INFO] Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2018-02-16 01:57:37.023][INFO] Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2018-02-16 01:57:37.027][INFO] Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2018-02-16 01:57:37.069][INFO] Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2018-02-16 01:57:37.074][INFO] Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+[2018-02-16 01:57:37.082][INFO] Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+[2018-02-16 01:57:37.094][INFO] Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2018-02-16 01:57:37.150][INFO] Started ReferenceClientApplication in 6.468 seconds (JVM running for 7.55)
+[2018-02-16 01:59:25.439][INFO] Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@2d463cbe: startup date [Fri Feb 16 01:57:31 EST 2018]; root of context hierarchy
+[2018-02-16 01:59:25.441][INFO] Stopping beans in phase 0
+[2018-02-16 01:59:25.444][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 01:59:25.444][INFO] Unregistering JMX-exposed beans
+[2018-02-16 01:59:25.445][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 10:19:57.562][INFO] Starting ReferenceClientApplication on LAPTOP-5304HFEG with PID 5932 (C:\Program Files\Splunk\etc\apps\mockdatatest\referenceclient.jar started by Robert in C:\Program Files\Splunk\etc\apps\mockdatatest)
+[2018-02-16 10:19:57.612][INFO] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 10:19:57 EST 2018]; root of context hierarchy
+[2018-02-16 10:19:58.552][INFO] Bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' of type [class org.springframework.scheduling.annotation.SchedulingConfiguration$$EnhancerBySpringCGLIB$$596bce70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-02-16 10:20:01.598][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 10:20:01.602][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 10:20:01.606][INFO] Starting beans in phase 0
+[2018-02-16 10:20:01.609][INFO] Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2018-02-16 10:20:01.655][INFO] Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2018-02-16 10:20:01.661][INFO] Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2018-02-16 10:20:01.666][INFO] Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2018-02-16 10:20:01.670][INFO] Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2018-02-16 10:20:01.676][INFO] Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2018-02-16 10:20:01.683][INFO] Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2018-02-16 10:20:01.687][INFO] Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+[2018-02-16 10:20:01.694][INFO] Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+[2018-02-16 10:20:01.704][INFO] Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2018-02-16 10:20:01.727][INFO] Started ReferenceClientApplication in 4.381 seconds (JVM running for 5.051)
+[2018-02-16 10:25:38.010][INFO] Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 10:19:57 EST 2018]; root of context hierarchy
+[2018-02-16 10:25:38.012][INFO] Stopping beans in phase 0
+[2018-02-16 10:25:38.014][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 10:25:38.014][INFO] Unregistering JMX-exposed beans
+[2018-02-16 10:25:38.015][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 11:19:02.181][INFO] Starting ReferenceClientApplication on LAPTOP-5304HFEG with PID 5132 (C:\Program Files\Splunk\etc\apps\mockdatatest\referenceclient.jar started by Robert in C:\Program Files\Splunk\etc\apps\mockdatatest)
+[2018-02-16 11:19:02.287][INFO] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 11:19:02 EST 2018]; root of context hierarchy
+[2018-02-16 11:19:04.143][INFO] Bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' of type [class org.springframework.scheduling.annotation.SchedulingConfiguration$$EnhancerBySpringCGLIB$$596bce70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-02-16 11:19:07.396][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 11:19:07.401][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 11:19:07.408][INFO] Starting beans in phase 0
+[2018-02-16 11:19:07.412][INFO] Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2018-02-16 11:19:07.564][INFO] Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2018-02-16 11:19:07.570][INFO] Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2018-02-16 11:19:07.574][INFO] Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2018-02-16 11:19:07.579][INFO] Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2018-02-16 11:19:07.582][INFO] Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2018-02-16 11:19:07.586][INFO] Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2018-02-16 11:19:07.590][INFO] Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+[2018-02-16 11:19:07.632][INFO] Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+[2018-02-16 11:19:07.642][INFO] Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2018-02-16 11:19:07.670][INFO] Started ReferenceClientApplication in 6.04 seconds (JVM running for 7.332)
+[2018-02-16 11:21:22.279][INFO] Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 11:19:02 EST 2018]; root of context hierarchy
+[2018-02-16 11:21:22.282][INFO] Stopping beans in phase 0
+[2018-02-16 11:21:22.289][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 11:21:22.290][INFO] Unregistering JMX-exposed beans
+[2018-02-16 11:21:22.292][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 11:59:31.471][INFO] Starting ReferenceClientApplication on LAPTOP-5304HFEG with PID 13572 (C:\Program Files\Splunk\etc\apps\mockdatatest\referenceclient.jar started by Robert in C:\Program Files\Splunk\etc\apps\mockdatatest)
+[2018-02-16 11:59:31.570][INFO] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 11:59:31 EST 2018]; root of context hierarchy
+[2018-02-16 11:59:33.240][INFO] Bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' of type [class org.springframework.scheduling.annotation.SchedulingConfiguration$$EnhancerBySpringCGLIB$$596bce70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-02-16 11:59:36.138][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 11:59:36.145][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 11:59:36.155][INFO] Starting beans in phase 0
+[2018-02-16 11:59:36.158][INFO] Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2018-02-16 11:59:36.237][INFO] Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2018-02-16 11:59:36.250][INFO] Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2018-02-16 11:59:36.255][INFO] Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2018-02-16 11:59:36.263][INFO] Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2018-02-16 11:59:36.267][INFO] Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2018-02-16 11:59:36.271][INFO] Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2018-02-16 11:59:36.285][INFO] Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+[2018-02-16 11:59:36.296][INFO] Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+[2018-02-16 11:59:36.306][INFO] Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2018-02-16 11:59:36.336][INFO] Started ReferenceClientApplication in 5.403 seconds (JVM running for 6.261)
+[2018-02-16 12:03:08.452][INFO] Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 11:59:31 EST 2018]; root of context hierarchy
+[2018-02-16 12:03:08.453][INFO] Stopping beans in phase 0
+[2018-02-16 12:03:08.456][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 12:03:08.456][INFO] Unregistering JMX-exposed beans
+[2018-02-16 12:03:08.457][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 17:35:34.536][INFO] Starting ReferenceClientApplication on LAPTOP-5304HFEG with PID 15060 (C:\Program Files\Splunk\etc\apps\mockdatatest\referenceclient.jar started by Robert in C:\Program Files\Splunk\etc\apps\mockdatatest)
+[2018-02-16 17:35:34.587][INFO] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 17:35:34 EST 2018]; root of context hierarchy
+[2018-02-16 17:35:35.524][INFO] Bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' of type [class org.springframework.scheduling.annotation.SchedulingConfiguration$$EnhancerBySpringCGLIB$$596bce70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-02-16 17:35:37.664][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 17:35:37.667][INFO] Registering beans for JMX exposure on startup
+[2018-02-16 17:35:37.671][INFO] Starting beans in phase 0
+[2018-02-16 17:35:37.673][INFO] Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2018-02-16 17:35:37.700][INFO] Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2018-02-16 17:35:37.708][INFO] Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2018-02-16 17:35:37.712][INFO] Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2018-02-16 17:35:37.717][INFO] Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2018-02-16 17:35:37.722][INFO] Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2018-02-16 17:35:37.726][INFO] Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2018-02-16 17:35:37.730][INFO] Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+[2018-02-16 17:35:37.739][INFO] Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+[2018-02-16 17:35:37.749][INFO] Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2018-02-16 17:35:37.783][INFO] Started ReferenceClientApplication in 3.478 seconds (JVM running for 4.204)
+[2018-02-16 18:09:28.439][INFO] Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@26754a90: startup date [Fri Feb 16 17:35:34 EST 2018]; root of context hierarchy
+[2018-02-16 18:09:28.453][INFO] Stopping beans in phase 0
+[2018-02-16 18:09:28.458][INFO] Unregistering JMX-exposed beans on shutdown
+[2018-02-16 18:09:28.459][INFO] Unregistering JMX-exposed beans
+[2018-02-16 18:09:28.461][INFO] Unregistering JMX-exposed beans on shutdown

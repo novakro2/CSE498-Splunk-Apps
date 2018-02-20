@@ -1,0 +1,8 @@
+<setup>
+	<block title="Test" endpoint="symantec_ep_setup/symantec_ep_script" entity="symantec_ep_script">
+		<input field="interval">
+			<label>Interval (in seconds)</label>
+			<type>text</type>
+		</input>
+	</block>
+</setup>

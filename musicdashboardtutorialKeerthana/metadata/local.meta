@@ -1,0 +1,21 @@
+[app/ui]
+version = 7.0.1
+modtime = 1516765374.234064000
+
+[app/launcher]
+version = 7.0.1
+modtime = 1516765374.240245000
+
+[html/music_html]
+owner = admin
+version = 7.0.1
+modtime = 1516770445.484399000
+
+[inputs/script%3A%2F%2F%24SPLUNK_HOME%2Fetc%2Fapps%2FSplunk_TA_symantec-ep%2Fbin%2Fmalware_category_update.py]
+owner = admin
+version = 7.0.1
+modtime = 1518126669.749955000
+
+[app/install/is_configured]
+version = 7.0.1
+modtime = 1518126671.489153000
