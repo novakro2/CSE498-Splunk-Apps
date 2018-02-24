@@ -1,0 +1,12 @@
+.dashboard-row .dashboard-panel h2.panel-title {
+   color:#111111;
+   font-size:45px;
+   font-weight:900;
+   text-align: center
+ }
+
+ .SingleValue .SingleValueHolder {
+   color:#111111;
+   font-size:20px !important;
+   font-weight:300;
+ }

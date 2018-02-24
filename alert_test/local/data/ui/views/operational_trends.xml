@@ -1,4 +1,4 @@
-<dashboard>
+<dashboard stylesheet="font_size.css">
   <label>Operational Trends</label>
   <row>
     <panel>
@@ -51,13 +51,14 @@
       <title>Authentication Status</title>
       <chart>
         <search>
-          <query>index="alert_test" |where operation = "authenticateUser"| top result.status | fields - percent | rex field=result.status mode=sed "s/\+/ /g"</query>
+          <query>index="alert_test" |where operation = "authenticateUser"|replace "0000" with "Success", "6008" with "Fail" in result.status | stats count by result.status</query>
           <earliest>0</earliest>
           <latest></latest>
         </search>
         <option name="charting.chart">pie</option>
         <option name="charting.drilldown">none</option>
         <option name="refresh.display">progressbar</option>
+        <option name="charting.chart.showPercent">true</option>
       </chart>
     </panel>
     <panel>
@@ -71,6 +72,7 @@
         <option name="charting.chart">line</option>
         <option name="charting.drilldown">none</option>
         <option name="refresh.display">progressbar</option>
+        <option name="charting.lineWidth">5</option>
       </chart>
     </panel>
   </row>
@@ -87,20 +89,23 @@
         <option name="charting.chart">line</option>
         <option name="charting.drilldown">none</option>
         <option name="refresh.display">progressbar</option>
+        <option name="charting.lineWidth">5</option>
       </chart>
     </panel>
     <panel>
       <title>Authentications over time</title>
       <chart>
-        <title>Authentications Over Time</title>
         <search>
-          <query>index="alert_test" | timechart count(_raw) span=1h by result.statusMessage</query>
+          <query>index="alert_test" | replace "0000" with "Success", "6008" with "Fail" in result.status | timechart count(_raw) span=1h by result.status</query>
           <earliest>-48h@h</earliest>
           <latest>now</latest>
+          <refresh>3s</refresh>
+          <refreshType>delay</refreshType>
         </search>
         <option name="charting.chart">line</option>
         <option name="charting.drilldown">none</option>
         <option name="refresh.display">progressbar</option>
+        <option name="charting.lineWidth">5</option>
       </chart>
     </panel>
   </row>
