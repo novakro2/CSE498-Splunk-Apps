@@ -27,15 +27,25 @@ version = 7.0.2
 modtime = 1519012648.624810600
 
 [views/alert_test]
+access = read : [ * ], write : [ * ]
+export = none
 owner = admin
 version = 7.0.2
-modtime = 1519002732.449381600
+modtime = 1519859367.264192000
 
 [views/operational_trends]
 version = 7.0.2
-modtime = 1519416387.103046800
+modtime = 1519761578.624617000
 
 [indexes/capstone_alerts]
 owner = admin
 version = 7.0.2
 modtime = 1519011544.424691200
+
+[myappsetup/setupentity]
+version = 7.0.2
+modtime = 1519862475.567218400
+
+[app/install/is_configured]
+version = 7.0.2
+modtime = 1519862481.923750000

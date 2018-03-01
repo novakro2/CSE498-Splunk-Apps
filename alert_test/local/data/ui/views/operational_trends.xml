@@ -22,13 +22,15 @@
       <single>
         <search>
           <query>index = "alert_test" | where operation = "authenticateUser"|stats count by operation | stats sum(count)</query>
-          <earliest>0</earliest>
-          <latest></latest>
+          <earliest>rt-30m</earliest>
+          <latest>rt</latest>
           <refresh>3s</refresh>
           <refreshType>delay</refreshType>
         </search>
         <option name="drilldown">none</option>
+        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0x65a637"]</option>
         <option name="refresh.display">progressbar</option>
+        <option name="useColors">1</option>
       </single>
     </panel>
     <panel>
@@ -42,13 +44,15 @@
           <refreshType>delay</refreshType>
         </search>
         <option name="drilldown">none</option>
+        <option name="rangeColors">["0x65a637","0x6db7c6","0xf7bc38","0xf58f39","0x65a637"]</option>
         <option name="refresh.display">progressbar</option>
+        <option name="useColors">1</option>
       </single>
     </panel>
   </row>
   <row>
     <panel>
-      <title>Authentication Status</title>
+      <title>Failed V.S. Successful Authentications</title>
       <chart>
         <search>
           <query>index="alert_test" |where operation = "authenticateUser"|replace "0000" with "Success", "6008" with "Fail" in result.status | stats count by result.status</query>
@@ -62,12 +66,12 @@
       </chart>
     </panel>
     <panel>
-      <title>Number of Authentications Over Last Few Days</title>
+      <title>Total Authentications Per Day</title>
       <chart>
         <search>
           <query>index="alert_test"|where operation = "authenticateUser" | rex field=ts "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
-          <earliest>0</earliest>
-          <latest></latest>
+          <earliest>-7d</earliest>
+          <latest>now</latest>
         </search>
         <option name="charting.chart">line</option>
         <option name="charting.drilldown">none</option>
@@ -78,7 +82,7 @@
   </row>
   <row>
     <panel>
-      <title>Users Created Over Time</title>
+      <title>Total Users Created Per Day</title>
       <chart>
         <search>
           <query>index="alert_test" |where operation = "createUser" | rex field=ts "^(?P&lt;Day&gt;..........)" | stats count by Day</query>
@@ -93,11 +97,11 @@
       </chart>
     </panel>
     <panel>
-      <title>Authentications over time</title>
+      <title>Total Authentications Per Minute</title>
       <chart>
         <search>
-          <query>index="alert_test" | replace "0000" with "Success", "6008" with "Fail" in result.status | timechart count(_raw) span=1h by result.status</query>
-          <earliest>-48h@h</earliest>
+          <query>index="alert_test" | replace "0000" with "Success", "6008" with "Fail" in result.status | timechart count(_raw) span=2m by result.status</query>
+          <earliest>-30m@m</earliest>
           <latest>now</latest>
           <refresh>3s</refresh>
           <refreshType>delay</refreshType>

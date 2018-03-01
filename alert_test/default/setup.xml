@@ -1,5 +1,27 @@
 <setup>
-    <block title=" " endpoint=" " entity=" ">
-        . . .
-    </block>
+  <block title="Configure This App">
+    <text>Edit the path to the p12 SSL Certificate so that Splunk can injest the data</text>
+  </block>
+
+  <block title="The local path to the ssl cert"
+         endpoint="ssl_info/update_ssl_info" entity="setupentity">
+
+      <input field="path">
+        <label>Enter the path</label>
+        <type>text</type>
+      </input>
+
+  </block>
+
+  <block title="The PW to the SSL cert"
+         endpoint="ssl_info/update_ssl_info" entity="setupentity">
+
+
+    <input field="pw" endpoint="ssl_info/update_ssl_info" entity="setupentity">
+      <label>Enter the pw</label>
+      <type>text</type>
+    </input>
+
+  </block>
+
 </setup>
